@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: gerenciador-gastos
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8080
+  servlet:
+    contextPath: /gerenciador-gastos
+
+app-database-connection:
+  driver: org.h2.Driver
+  url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+  usuario: sa
+  senha:
+
+app-database-hibernate:
+  dialect: org.hibernate.dialect.H2Dialect
+  hbm2ddl-auto: create
+  package-scan: com.api.model.entity
+  show-sql: true
+
+logging:
+  level:
+    org.springframework.security: ERROR
+    org.hibernate: INFO
